@@ -12,7 +12,7 @@ fn txx_empty_rule() {
 #[test]
 fn use_module_star() {
     check(
-        b"@use 'tests/basic/defs' as *;\
+        b"@use 'tests/manual/basic/defs' as *;\
           \ndiv {\
           \n  color: $color;\
           \n  col1: foo(1);\
@@ -32,7 +32,7 @@ fn use_module_star() {
 #[test]
 fn use_module() {
     check(
-        b"@use 'tests/basic/defs';\
+        b"@use 'tests/manual/basic/defs';\
           \ndiv {\
           \n  color: defs.$color;\
           \n  col1: defs.foo(1);\
@@ -52,7 +52,7 @@ fn use_module() {
 
 #[test]
 fn t14_imports() {
-    let path = "tests/basic/14_imports/input.scss";
+    let path = "tests/manual/basic/14_imports/input.scss";
     assert_eq!(
         String::from_utf8(
             compile_scss_path(path.as_ref(), Default::default()).unwrap()
@@ -165,7 +165,7 @@ fn t15_arithmetic_and_lists() {
 
 #[test]
 fn t33_ambigous_imports() {
-    let path = "tests/basic/33_ambiguous_imports/input.scss";
+    let path = "tests/manual/basic/33_ambiguous_imports/input.scss";
     assert_eq!(
         String::from_utf8(
             compile_scss_path(path.as_ref(), Default::default()).unwrap()
